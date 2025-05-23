@@ -37,7 +37,7 @@
 ## Contents
 - [Release](#release)
 - [Contents](#contents)
-- [🐶 Introduction](#-introduction)
+- [🔆 Introduction](#-introduction)
 - [📆 TODO](#-todo)
 - [📖 BibTeX](#-bibtex)
 
