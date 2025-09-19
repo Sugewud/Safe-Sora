@@ -32,6 +32,7 @@
 </div>
 
 ## Release
+- [09/19] 🎉 🎉 Safa-Sora is accepted by NeurIPS 2025! 
 - [05/23] Initial Preview Release 🔥 Coming Soon!
 
 ## Contents
