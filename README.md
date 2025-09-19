@@ -32,15 +32,9 @@
 </div>
 
 ## Release
-- [09/19] 🎉 🎉 Safa-Sora is accepted by NeurIPS 2025! 
+- [09/19] 🚀 🚀  Code Released! 
+- [09/18] 🎉 🎉 Safa-Sora is accepted by NeurIPS 2025! 
 - [05/23] Initial Preview Release 🔥 Coming Soon!
-
-## Contents
-- [Release](#release)
-- [Contents](#contents)
-- [🔆 Introduction](#-introduction)
-- [📆 TODO](#-todo)
-- [📖 BibTeX](#-bibtex)
 
 ## 🔆 Introduction
 Safe-Sora is the first framework that integrates graphical watermarks directly into the video generation process.
@@ -68,12 +62,57 @@ The following results show the original video, the watermarked video, the differ
   </tr>
 </table>
 
+## 📋 File Preparation
 
+Download the files and place them in the root directory.
 
+- [checkpoints](https://drive.google.com/file/d/1ciKIafSQFbulL3xvQjARYPxxnvnpXGaI/view?usp=sharing) contains the pretrained weights for Safe-Sora, VideoCrafter2, the VAE, and the 3D-CNN (simulating H.264 compression).
+- [dataset](https://drive.google.com/file/d/1-aIaPyhkufrwWMVva_bAZ2I4kh-_OMII/view?usp=sharing) contains the Logo-2K dataset and the Panda-70M dataset.
+- [mamba](https://drive.google.com/file/d/1fnm67gq_0xfTWpTG08ByKXlK4wfG39Qz/view?usp=sharing) is provided for setting up the environment.
+- [causal-conv1d](https://drive.google.com/file/d/1RIR4i9MyCfgnmeXrjhQOBR0bkIV-VDFT/view?usp=sharing) is provided for setting up the environment.
 
-## 📆 TODO
-The repo is still being under construction, thanks for your patience. 
-- [ ] Release of code.
+## 💻 Requirements
+
+To install requirements:
+
+```setup
+conda create -n safe-sora python=3.9
+conda activate safe-sora
+conda install pytorch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+pip install packaging ninja==1.11.1.1
+cd causal-conv1d
+python setup.py install
+cd ../mamba
+python setup.py install
+
+cd ..
+pip install -r requirements.txt
+```
+
+## 🐶 Training
+To train Safe-Sora, run this command:
+
+```train
+bash train.sh 
+```
+
+We use DDP to train Safe-Sora. You can modify the parameters in train.sh to select which GPUs to use.
+
+## 🚀 Evaluation
+
+To evaluate our models, run:
+
+```eval
+bash test.sh 
+```
+
+## 🙌🏻 Acknowledgement
+Our code is based on these awesome repos:
+* [Mamba](https://github.com/state-spaces/mamba)
+* [RainMamba](https://github.com/TonyHongtaoWu/RainMamba)
+* [FreqMamba](https://github.com/aSleepyTree/FreqMamba)
+
 
 ## 📖 BibTeX
 If you find our repo helpful, please consider leaving a star or cite our paper :)
